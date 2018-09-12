@@ -54,6 +54,12 @@ html(prefix="og:http://ogp.me/ns#")
       meta(name="twitter:description", content=twitterCardDesc)
       meta(name="twitter:image", content=twitterCardImg)
 
+    if themeColor
+      meta(name="theme-color" content=themeColor)
+
+    if msAppTitleColor
+      meta(name="msapplication-TileColor" content=msAppTitleColor)
+
     if favicons
       each value, key in favicons
         - var attributes = {};
@@ -74,6 +80,10 @@ html(prefix="og:http://ogp.me/ns#")
 
     if manifestJson
       link(rel="manifest" href=manifestJson)
+
+    if maskIcon && maskIcon.svg && maskIcon.color
+      link(rel="mask-icon" href=maskIcon.svg color=maskIcon.color)
+
 
     //- css block ページ個別のCSS
     block css

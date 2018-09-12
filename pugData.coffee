@@ -50,6 +50,14 @@ config =
 
     manifestJson: '/assets/img/icon/manifest.json'
 
+    themeColor: '#ffffff'
+
+    maskIcon:
+      svg: ''
+      color: '#000000'
+
+    msAppTitleColor: '#ffffff'
+
   develop:
     siteUrl: 'https://dev.sample.jp/'
     ogImage: 'https://dev.sample.jp/assets/img/ogp.png'

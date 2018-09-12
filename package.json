@@ -1,7 +1,7 @@
 {
   "name": "gulp-static-website",
   "description": "",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "author": "",
   "scripts": {
     "build": "gulp --env=develop",
@@ -85,6 +85,7 @@
     "webpack-stream": "^5.1.1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0"
+    "@babel/runtime": "^7.0.0",
+    "@babel/runtime-corejs2": "^7.0.0"
   }
 }

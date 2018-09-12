@@ -22,7 +22,6 @@ module.exports = (gulp, gulpPlugins, config)->
   #
 
   minify = config.minify.js and config.env isnt 'develop'
-  console.log minify, config.sourcemap
 
   # webpack loaderSettings
   babelLoaderSettings =
@@ -33,13 +32,17 @@ module.exports = (gulp, gulpPlugins, config)->
           '@babel/preset-env'
           {
             modules: false
-            targets: config.targetBrowsers
+            targets:
+              browsers: config.targetBrowsers
           }
         ]
         '@babel/preset-react'
       ]
       plugins: [
-        '@babel/plugin-transform-runtime'
+        [
+          '@babel/plugin-transform-runtime'
+          { corejs: 2 }
+        ]
         'transform-react-pug'
       ]
 

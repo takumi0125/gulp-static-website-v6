@@ -20,13 +20,7 @@ module.exports = (gulp, gulpPlugins, config, utils)->
       data.env = config.env
       return data
     .pipe gulpPlugins.pug(pugOptions)
-
-    if config.env isnt 'develop'
-      stream = stream
-      .pipe(gulpPlugins.replace('utf-8', 'shift_jis'))
-      .pipe(gulpPlugins.convertEncoding(to: 'euc-jp'))
-
-    stream.pipe gulp.dest config.publishDir
+    .pipe gulp.dest config.publishDir
     .pipe gulpPlugins.debug title: gulpPlugins.util.colors.cyan('[pug]:')
 
   # pugAll
@@ -37,12 +31,6 @@ module.exports = (gulp, gulpPlugins, config, utils)->
       data = require(config.pugData)(config.env)
       data.env = config.env
       return data
-
-    if config.env isnt 'develop'
-      stream = stream
-      .pipe(gulpPlugins.replace('utf-8', 'shift_jis'))
-      .pipe(gulpPlugins.convertEncoding(to: 'euc-jp'))
-
-    stream.pipe gulpPlugins.pug(pugOptions)
+    .pipe gulpPlugins.pug(pugOptions)
     .pipe gulp.dest config.publishDir
     .pipe gulpPlugins.debug title: gulpPlugins.util.colors.cyan('[pugAll]:')

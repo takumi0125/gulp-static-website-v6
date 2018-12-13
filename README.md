@@ -11,7 +11,7 @@ gulp v3.9.1で動作確認済み
 ```bash
 mkdir yourProject
 cd yourProject
-git clone git@github.com:takumi0125/gulp-static-website-v5.git .
+git clone git@github.com:takumi0125/gulp-static-website-v6.git .
 npm i
 npm start
 ```

@@ -1,5 +1,5 @@
 // preloadImg
-export default function(imgPath) {
+export default async function(imgPath) {
   return new Promise(function(resolve, reject) {
     var img, onError, onLoad;
     img = new Image();
